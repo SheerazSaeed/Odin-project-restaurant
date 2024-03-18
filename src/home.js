@@ -6,7 +6,7 @@ function loadHomePage() {
   headline.textContent = 'The Pho Palace';
   
   const image = new Image();
-  image.src = "./pho-restaurant-page.jpg";
+  image.src = "";
   image.alt = 'A picture of Pho';
   
   const description = document.createElement('p');

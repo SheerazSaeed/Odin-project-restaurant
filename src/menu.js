@@ -1,19 +1,13 @@
 function loadMenuPage() {
 
-  function clearContent() {
-    const content = document.getElementById('content');
-    while (content.firstChild) {
-      content.removeChild(content.firstChild);
-    }
-  }
-  clearContent();
   const content = document.getElementById('content');
+  content.innerHTML = '';
   
   const headline = document.createElement('h1');
   headline.textContent = 'menu';
   
   const image = new Image();
-  image.src = "./pho-restaurant-page.jpg";
+  image.src = "";
   image.alt = 'A picture of Pho';
   
   const description = document.createElement('p');
