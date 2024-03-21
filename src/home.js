@@ -1,6 +1,10 @@
 function loadHomePage() {
   const content = document.getElementById('content');
-  content.innerHTML = '';
+  content.innerHTML = ''; 
+
+ 
+  const innerDiv = document.createElement('div');
+  innerDiv.classList.add('inner-content'); // Add class for styling
 
   const headline = document.createElement('h1');
   headline.textContent = 'The Pho Palace';
@@ -31,14 +35,19 @@ function loadHomePage() {
     5 High street
     Camden, London
     England
-  `
-   
-  content.appendChild(headline);
-  content.appendChild(description);
-  content.appendChild(restaurantHours);
-  content.appendChild(hoursText);
-  content.appendChild(restaurantLocation);
-};
+  `;
+
+  innerDiv.appendChild(headline);
+  innerDiv.appendChild(description);
+  innerDiv.appendChild(restaurantHours);
+  restaurantHours.appendChild(hoursText); // hoursText should be a child of restaurantHours
+  innerDiv.appendChild(restaurantLocation);
+
+  const outerDiv = document.createElement('div');
+  outerDiv.classList.add('outer-layer'); // Add class for styling
+  outerDiv.appendChild(innerDiv);
+
+  content.appendChild(outerDiv);
+}
 
 export default loadHomePage;
-

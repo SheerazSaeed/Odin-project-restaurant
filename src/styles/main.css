@@ -1,0 +1,67 @@
+.contact-section ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.contact-section li {
+  margin-bottom: 10px;
+}
+
+.contact-section label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.contact-section input[type="text"],
+.contact-section input[type="email"],
+.contact-section textarea {
+  width: 40%; /* Adjusts the width to fill the container */
+  padding: 8px; /* Adds some padding inside the input fields and textarea */
+  box-sizing: border-box; /* Ensures padding does not affect the overall width */
+}
+
+.contact-section textarea {
+  height: 100px; /* Adjust height as needed */
+  resize: vertical; /* Allows the user to resize the textarea vertically */
+}
+
+.about-headline, .about-description, .contact-section {
+  text-align: left;
+}
+
+.form-input, .form-textarea {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  margin-bottom: 20px;
+  box-sizing: border-box; /* Ensures padding does not affect the overall width */
+}
+
+.form-textarea {
+  height: 100px; /* Adjust height as needed */
+  resize: vertical; /* Allows the user to resize the textarea vertically */
+}
+
+.submit-btn {
+  background-color: #4CAF50; /* Green background */
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.submit-btn:hover {
+  background-color: #45a049; /* Darker green on hover */
+}
+
+#submitMessage {
+  margin-left: 10px;
+}
+
+
+
+
+
+
+
