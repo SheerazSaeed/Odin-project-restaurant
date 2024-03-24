@@ -1,14 +1,22 @@
 function loadMenuPage() {
-
   const content = document.getElementById('content');
   content.innerHTML = '';
-  
+
+  // Outer div for styling or background purposes
+  const outerDiv = document.createElement('div');
+  outerDiv.classList.add('outer-layer');
+
+  // Inner div to contain all the menu content
+  const innerDiv = document.createElement('div');
+  innerDiv.classList.add('inner-content');
+
   const headline = document.createElement('h1');
   headline.textContent = 'Menu';
+  innerDiv.appendChild(headline); // Append headline to innerDiv
 
   const menuDiv = document.createElement('div');
   menuDiv.classList.add('menu');
-  
+
   const dishes = [
     { name: "Pho Bo", description: "Traditional Vietnamese beef noodle soup", price: "$10" },
     { name: "Banh Mi", description: "Vietnamese sandwich with various fillings", price: "$5" },
@@ -33,12 +41,12 @@ function loadMenuPage() {
     dishPrice.textContent = dish.price;
     dishDiv.appendChild(dishPrice);
 
-    menuDiv.appendChild(dishDiv);
+    menuDiv.appendChild(dishDiv); // Append each dishDiv to menuDiv
   });
 
-  content.appendChild(headline);
-  content.appendChild(menuDiv);
- 
+  innerDiv.appendChild(menuDiv); // Append menuDiv to innerDiv
+  outerDiv.appendChild(innerDiv); // Finally, append innerDiv to outerDiv
+  content.appendChild(outerDiv); // Append outerDiv to the main content area
 };
 
 export default loadMenuPage;

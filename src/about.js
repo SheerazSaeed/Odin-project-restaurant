@@ -1,27 +1,28 @@
 function loadAboutPage() {
-
   const content = document.getElementById('content');
   content.innerHTML = ''; 
+
+  // Outer div for broader styling
+  const outerDiv = document.createElement('div');
+  outerDiv.classList.add('outer-about');
+
+  // Inner div for specific content styling
+  const innerDiv = document.createElement('div');
+  innerDiv.classList.add('inner-about');
+
   const headline = document.createElement('h1');
-  headline.textContent = 'About us';
+  headline.textContent = 'About Us';
   headline.classList.add('about-headline');
   
   const description = document.createElement('p');
   description.textContent = 
     'Pho Palace was founded in 2020 with the goal of bringing authentic Vietnamese cuisine to our city. Our founders, inspired by their travels through Vietnam and their love for its rich culinary traditions, wanted to create a space where locals could experience the warmth and complexity of Vietnamese flavors. From our pho to our spring rolls, every dish is crafted with care, using traditional recipes and fresh ingredients.';
-  description.classList.add('about-description');  
+  description.classList.add('about-description');
 
-  const contactHeading = document.createElement('h2');
-  contactHeading.textContent = 'Contact Us';
-
+  // Assuming contactSection is meant for the Contact Us information and form
   const contactSection = document.createElement('div');
   contactSection.classList.add('contact-section');
   contactSection.innerHTML = `
-    <h2>Contact Us</h2>
-    For reservations and inquiries:<br>
-    Phone: 124-421-7890<br>
-    Email: info@phopalace123.com
-
     <p>Or fill in the form below:</p>
     <form id="contactForm">
       <label for="name">Name:</label>
@@ -34,16 +35,24 @@ function loadAboutPage() {
     </form>
     <span id="submitMessage" style="color: green; display: none;">Submitted</span>
   `;
-  
-  content.appendChild(headline);
-  content.appendChild(description);
-  content.appendChild(contactSection);
+
+  // Appending all elements to innerDiv
+  innerDiv.appendChild(headline);
+  innerDiv.appendChild(description);
+  innerDiv.appendChild(contactSection);
+
+  // Appending innerDiv to outerDiv
+  outerDiv.appendChild(innerDiv);
+
+  // Finally, appending outerDiv to content
+  content.appendChild(outerDiv);
 
   document.getElementById('contactForm').addEventListener('submit', function(e) {
     e.preventDefault(); // Prevent actual form submission
-    document.getElementById('submitMessage').style.display = 'inline'; // Show "Submitted" message
+    const submitMessage = document.getElementById('submitMessage');
+    submitMessage.style.display = 'inline'; // Show "Submitted" message
     setTimeout(() => {
-      document.getElementById('submitMessage').style.display = 'none'; // Hide the message after 5 seconds
+      submitMessage.style.display = 'none'; // Hide the message after 5 seconds
     }, 5000);
   });
 }
